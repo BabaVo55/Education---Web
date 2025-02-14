@@ -17,9 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex w-[1/3] bg-red-300">
-
-        </div>
         {children}
       </body>
     </html>
