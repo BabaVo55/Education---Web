@@ -5,47 +5,23 @@ import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts
 
 const data = [
   {
-    name: '18-24',
-    uv: 31.47,
-    pv: 2400,
+    name: 'Total',
+    count: 106,
+    // pv: 2400,
     fill: '#8884d8',
   },
   {
-    name: '25-29',
-    uv: 26.69,
-    pv: 4567,
+    name: 'Male',
+    count: 53,
+    // pv: 2400,
+    fill: '#8884d8',
+  },
+  {
+    name: 'Female',
+    count: 53,
+    // pv: 4567,
     fill: '#83a6ed',
-  },
-  {
-    name: '30-34',
-    uv: 15.69,
-    pv: 1398,
-    fill: '#8dd1e1',
-  },
-  {
-    name: '35-39',
-    uv: 8.22,
-    pv: 9800,
-    fill: '#82ca9d',
-  },
-  {
-    name: '40-49',
-    uv: 8.63,
-    pv: 3908,
-    fill: '#a4de6c',
-  },
-  {
-    name: '50+',
-    uv: 2.63,
-    pv: 4800,
-    fill: '#d0ed57',
-  },
-  {
-    name: 'unknow',
-    uv: 6.67,
-    pv: 4800,
-    fill: '#ffc658',
-  },
+  }
 ];
 
 const style = {
@@ -55,7 +31,8 @@ const style = {
     lineHeight: '24px',
   };
 
-export default function CountChart({count, gender}:{count:number, gender:string}) {
+export default function CountChart({count, gender}:{count:number, gender:boolean}) {
+  const genderResult = gender ? 'male' : 'female'
   return (
     <div className='bg-white rounded-xl w-full h-full p-4'>
         {/* TITLE */}
@@ -64,15 +41,16 @@ export default function CountChart({count, gender}:{count:number, gender:string}
             <Image src="/moreDark.png" alt="" width={20} height={20} />
         </div>
         {/* CHART */}
-        <div className="">
+        <div className="w-full h-[75%]">
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
                   <RadialBar
-                    minAngle={15}
                     label={{ position: 'insideStart', fill: '#fff' }}
                     background
-                    clockWise
-                    dataKey="uv"
+                    dataKey="count"
+                    
+                    // clockWise
+                    // minAngle={60}
                   />
                   <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
                 </RadialBarChart>
@@ -81,11 +59,9 @@ export default function CountChart({count, gender}:{count:number, gender:string}
         {/* BOTTOM */}
         <div className="flex justify-center gap-16">
             <div className='flex flex-col gap-1'>
-                <div className="w-5 h-5 bg-ethemSky rounded-full">
-
-                <h1 className='font-bold'>{gender}</h1>
-                <h2 className='text-xs text-gray-500'>{count}</h2>
-                </div>
+                <div className="w-5 h-5 bg-ethemSky rounded-full"></div>
+                <h1 className='font-bold'>{count}</h1>
+                <h2 className='text-xs text-gray-500'>{genderResult}(55%)</h2>
             </div>
         </div>
     </div>

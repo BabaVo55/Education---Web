@@ -22,7 +22,7 @@ export default function AdminPage() {
         <div className='flex gap-4 flex-col lg:flex-row'>
           {/* Count Chart */}
           <div className='w-full lg:w-1/3 h-[450px]'>
-            <CountChart count={rand()} gender='Male'/>
+            <CountChart count={rand()} gender={false}/>
           </div>
           {/* Attendance Chart */}
           <div className='w-full lg:w-2/3'>
