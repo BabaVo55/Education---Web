@@ -19,7 +19,9 @@ const config: Config = {
         ethemPurple: '#CFCEFF',
         ethemPurpleLight: '#f1f0ff',
         ethemYellow: '#FAE27C',
-        ethemYellowLight: "#FEFCE8"
+        ethemYellowLight: "#FEFCE8",
+        ethemNavy: '#455d7a',
+        ethemRed: '#f95959'
       }
     },
   },

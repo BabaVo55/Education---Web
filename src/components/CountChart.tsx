@@ -8,19 +8,19 @@ const data = [
     name: 'Total',
     count: 106,
     // pv: 2400,
-    fill: '#8884d8',
+    fill: 'white',
   },
   {
     name: 'Male',
     count: 53,
     // pv: 2400,
-    fill: '#8884d8',
+    fill: '#f95959',
   },
   {
     name: 'Female',
     count: 53,
     // pv: 4567,
-    fill: '#83a6ed',
+    fill: '#455d7a',
   }
 ];
 
@@ -41,9 +41,9 @@ export default function CountChart({count, gender}:{count:number, gender:boolean
             <Image src="/moreDark.png" alt="" width={20} height={20} />
         </div>
         {/* CHART */}
-        <div className="w-full h-[75%]">
+        <div className="w-full h-[75%] relative">
             <ResponsiveContainer width="100%" height="100%">
-                <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
+                <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={20} data={data}>
                   <RadialBar
                     label={{ position: 'insideStart', fill: '#fff' }}
                     background
@@ -52,14 +52,21 @@ export default function CountChart({count, gender}:{count:number, gender:boolean
                     // clockWise
                     // minAngle={60}
                   />
-                  <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+                  {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} /> */}
                 </RadialBarChart>
             </ResponsiveContainer>
+
+            <Image src='/maleFemale.png' alt='' height={50} width={50} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'/>
         </div>
         {/* BOTTOM */}
         <div className="flex justify-center gap-16">
             <div className='flex flex-col gap-1'>
-                <div className="w-5 h-5 bg-ethemSky rounded-full"></div>
+                <div className="w-5 h-5 bg-ethemNavy rounded-full"></div>
+                <h1 className='font-bold'>{count}</h1>
+                <h2 className='text-xs text-gray-500'>{genderResult}(55%)</h2>
+            </div>
+            <div className='flex flex-col gap-1'>
+                <div className="w-5 h-5 bg-ethemRed rounded-full"></div>
                 <h1 className='font-bold'>{count}</h1>
                 <h2 className='text-xs text-gray-500'>{genderResult}(55%)</h2>
             </div>
