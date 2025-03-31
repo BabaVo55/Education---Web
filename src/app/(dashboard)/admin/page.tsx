@@ -10,7 +10,7 @@ export default function AdminPage() {
     return Math.floor(Math.random() * 3000)
   }
   return (
-    <div className='p-4 flex gap-4 flex-col md:flex-row'>
+    <div className='p-4 flex gap-4 flex-col md:flex-row h-screen'>
       {/* Left */}
       <div className="w-full lg:w-2/3 border">
         {/* UserCards */}
@@ -33,7 +33,7 @@ export default function AdminPage() {
 
         </div>
         {/* Bottom Charts */}
-        <div className="w-full lg:-w-2/3 h-500 mt-4">
+        <div className="w-full lg:-w-2/3 h-[500px] mt-4">
           <FinanceChart />
         </div>
       </div>

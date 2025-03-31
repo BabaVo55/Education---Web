@@ -56,8 +56,8 @@ const TriangleBar = (props) => {
 export default function AttendanceChart() {
   return (
     <div className='bg-white rounded-lg p-4 h-full'>
-        <div className='flex align-center justify-between'>
-            <h1 className="text-lg font-semibold">Attendance</h1>
+        <div className='flex justify-between items-center'>
+            <h1 className="text-lg font-semibold ">Attendance</h1>
             <Image src='/moreDark.png' alt='' width={20} height={20} />
         </div>
         <div className='flex flex-col h-full justify-center'>

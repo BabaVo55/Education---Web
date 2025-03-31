@@ -37,7 +37,7 @@ export default function CountChart({count, gender}:{count:number, gender:boolean
     <div className='bg-white rounded-xl w-full h-full p-4'>
         {/* TITLE */}
         <div className="flex justify-between item-center">
-            <h1 className='text-large font-semibold'>Student</h1>
+            <h1 className='text-large font-semibold '>Student</h1>
             <Image src="/moreDark.png" alt="" width={20} height={20} />
         </div>
         {/* CHART */}
