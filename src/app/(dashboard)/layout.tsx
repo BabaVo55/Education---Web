@@ -9,7 +9,7 @@ export default function DashboardLayout({
 }>) {
   return (
 
-        <div className="flex ">
+        <div className="flex h-screen">
             {/* Left */}
             <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] shadow-lg p-4">
               <Link href="/" className="flex lg:justify-start justify-center gap-2" >
