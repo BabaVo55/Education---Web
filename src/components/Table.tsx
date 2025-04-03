@@ -8,8 +8,8 @@ const Table = ({columns, renderRow, data}:{
     data:any[];
 }) => {
     return (
-        <div className="w-full mt-4 border flex">
-            <thead className="">
+        <div className="w-full mt-4 border">
+            <thead>
                 <tr className="text-left text-gray-500 text-sm">
                     {columns.map((col) => (
                         <th key={col.accessor}>{col.header}</th>
