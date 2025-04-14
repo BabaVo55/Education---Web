@@ -12,12 +12,8 @@ export default function EventCalender(){
 
 
     return (
-
-
- 
-
-    <div className='bg-white p-4 rounded'>
-      <Calendar onChange={onChange} value={value} />
-    </div>
+      <div className='bg-white p-4 rounded'>
+        <Calendar onChange={onChange} value={value} />
+      </div>
     )
 }

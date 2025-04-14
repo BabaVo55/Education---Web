@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, teachersData } from "@/lib/data";
+import { role, studentsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,8 +13,8 @@ const columns = [
         accessor: "info",
     },
     {
-        header:"Teacher ID", 
-        accessor: "teacherId", 
+        header:"Student ID", 
+        accessor: "studentId", 
         className: "hidden md:table-cell"
     },
     {
@@ -28,8 +28,8 @@ const columns = [
         className: "hidden md:table-cell"
     },
     {
-        header:"Phone", 
-        accessor: "phone", 
+        header:"Grade", 
+        accessor: "grade", 
         className: "hidden lg:table-cell"
     },
     {
@@ -46,17 +46,17 @@ const columns = [
 
 type Teacher = {
     id:number;
-    teacherId:string;
+    studentId:string;
     name:string;
     email?:string;
     photo:string;
     phone:string;
-    subjects:string[];
-    classes:string[];
+    grade:string[];
+    class:string[];
     address:string; 
 }
 
-export default function TeacherListPage(){
+export default function StudentListPage(){
 
     const renderRow = (item:Teacher) => {
         return (
@@ -68,9 +68,9 @@ export default function TeacherListPage(){
                     <p className="text-xs text-gray-500">{item.email}</p>
                 </div>
             </td>
-            <td className="hidden md:table-cell">{item.teacherId}</td>
-            <td className="hidden md:table-cell">{item.subjects}</td>
-            <td className="hidden md:table-cell">{item.classes.join(",")}</td>
+            <td className="hidden md:table-cell">{item.studentId}</td>
+            <td className="hidden md:table-cell">{item.grade}</td>
+            <td className="hidden md:table-cell">{item.class}</td>
             <td className="hidden md:table-cell">{item.phone}</td>
             <td className="hidden md:table-cell">{item.address}</td>
             <td className="">
@@ -109,7 +109,7 @@ export default function TeacherListPage(){
                 </div>
             </div>
              {/* List section */}
-            <Table columns={columns} renderRow={renderRow} data={teachersData}/>
+            <Table columns={columns} renderRow={renderRow} data={studentsData}/>
              {/* Pagination section */}
             <Pagination />
         </div>

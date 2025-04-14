@@ -12,11 +12,14 @@ const Table = ({columns, renderRow, data}:{
             <thead>
                 <tr className="text-left text-gray-500 text-sm">
                     {columns.map((col) => (
-                        <th className={col.className} key={col.accessor}>{col.header}</th>
+                        <th className={col.className} key={col.accessor}>
+                            {col.header}
+                        </th>
                     ))}
                 </tr>
             </thead>
             <tbody>{data.map(item => renderRow(item))}</tbody>
+            
         </table>
     )
 }
