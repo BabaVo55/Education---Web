@@ -18,24 +18,19 @@ const columns = [
         className: "hidden md:table-cell"
     },
     {
-        header:"Subjects", 
-        accessor: "subject", 
-        className: "hidden md:table-cell"
-    },
-    {
-        header:"Classes", 
-        accessor: "classes", 
-        className: "hidden md:table-cell"
-    },
-    {
         header:"Grade", 
         accessor: "grade", 
-        className: "hidden lg:table-cell"
+        className: "hidden md:table-cell"
+    },
+    {
+        header:"Phone",
+        accessor: "phone",
+        className: "hidden md:table-cell"
     },
     {
         header:"Address", 
         accessor: "address", 
-        className: "hidden lg:table-cell"
+        className: "hidden md:table-cell"
     },
     {
         header:"Actions", 
@@ -44,13 +39,13 @@ const columns = [
     }
 ]
 
-type Teacher = {
+type Student = {
     id:number;
     studentId:string;
     name:string;
     email?:string;
     photo:string;
-    phone:string;
+    phone?:string;
     grade:string[];
     class:string[];
     address:string; 
@@ -58,19 +53,18 @@ type Teacher = {
 
 export default function StudentListPage(){
 
-    const renderRow = (item:Teacher) => {
+    const renderRow = (item:Student) => {
         return (
         <tr key={item.id} className="border-b border-gray-200 text-sm even:bg-slate-50 hover:odd:bg-ethemPurpleLight">
             <td className="flex items-center gap-4 p-4">
                 <Image src={item.photo} alt="" width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover" />
                 <div className="flex flex-col">
                     <span  className="font-semibold">{item.name}</span>
-                    <p className="text-xs text-gray-500">{item.email}</p>
+                    <p className="text-xs text-gray-500">{item.class}</p>
                 </div>
             </td>
             <td className="hidden md:table-cell">{item.studentId}</td>
             <td className="hidden md:table-cell">{item.grade}</td>
-            <td className="hidden md:table-cell">{item.class}</td>
             <td className="hidden md:table-cell">{item.phone}</td>
             <td className="hidden md:table-cell">{item.address}</td>
             <td className="">
@@ -102,9 +96,9 @@ export default function StudentListPage(){
                         <button className="flex w-8 h-8 items-center justify-center rounded-full bg-ethemYellow">
                             <Image src="/sort.png" alt="" width={14} height={14} />
                         </button>
-                        <button className="flex w-8 h-8 items-center justify-center rounded-full bg-ethemYellow">
+                       {role == 'admin' && <button className="flex w-8 h-8 items-center justify-center rounded-full bg-ethemYellow">
                             <Image src="/plus.png" alt="" width={14} height={14} />
-                        </button>
+                        </button>}
                     </div>
                 </div>
             </div>
